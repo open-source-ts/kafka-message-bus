@@ -61,6 +61,11 @@ const exampleConsumer = {
 // Initialize and start the consumer (configure according to your Kafka setup)
 // ...
 ```
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=tomer555/kafka-message-bus&type=Date)](https://star-history.com/#tomer555/kafka-message-bus&Date)
+
+
 
 ## Contributing
 We welcome contributions! Here's how you can contribute:
