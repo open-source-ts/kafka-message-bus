@@ -1,6 +1,6 @@
 
 # Kafka Message Bus 🚌✨
-
+[![Coverage Status](https://coveralls.io/repos/github/tomer555/kafka-message-bus/badge.svg?branch=master)](https://coveralls.io/github/tomer555/kafka-message-bus?branch=master)
 ## Introduction
 Kafka Message Bus is a wrapper for KafkaJS, enhancing its functionality with deadletter topic support and handlers. It efficiently manages failed message processing in Kafka topics by redirecting them to deadletter topics for resolution, improving reliability in Kafka-based systems.
 
