@@ -2,7 +2,7 @@
 # Kafka Message Bus 🚌✨
 
 ## Introduction
-Kafka Message Bus enhances KafkaJS functionality with deadletter topic support, improving Kafka stream reliability. 🚀
+Kafka Message Bus is a wrapper for KafkaJS, enhancing its functionality with deadletter topic support and handlers. It efficiently manages failed message processing in Kafka streams by redirecting them to deadletter topics for resolution, improving reliability in Kafka-based systems.
 
 ## Getting Started
 1. **Clone the repository**: 
