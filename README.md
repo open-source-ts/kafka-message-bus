@@ -63,7 +63,14 @@ const exampleConsumer = {
 ```
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=tomer555/kafka-message-bus&type=Date)](https://star-history.com/#tomer555/kafka-message-bus&Date)
+<a href="https://star-history.com/#tomer555/kafka-message-bus&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=tomer555/kafka-message-bus&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=tomer555/kafka-message-bus&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=tomer555/kafka-message-bus&type=Date" />
+  </picture>
+</a>
+
 
 
 
