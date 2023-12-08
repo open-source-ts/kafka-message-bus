@@ -27,6 +27,41 @@ Configure, initialize, and use the Kafka provider in your application.
 ## In-Memory Provider Usage 🧠
 Set up and use the In-Memory provider for testing or lightweight handling.
 
+## Usage Examples
+
+### Setting Up the Consumer
+
+This example demonstrates how to define a consumer with deadletter handling using only the `kafka-message-bus` package. The consumer listens to a specified topic, processes each message, and handles errors by utilizing a deadletter queue.
+
+```typescript
+import { KafkaConsumerMessage } from 'kafka-message-bus';
+
+// Function to simulate processing of a generic event
+async function processEvent(event: any) {
+  // Replace with your actual event processing logic
+  console.log(`Processing event: ${JSON.stringify(event)}`);
+}
+
+// Define the Kafka consumer
+const exampleConsumer = {
+  topic: 'your-topic-name',
+  deadletter: true,
+  handler: async (kafkaMsg: KafkaConsumerMessage) => {
+    console.log(`Received message in ${this.topic}: ${JSON.stringify(kafkaMsg)}`);
+    try {
+      // Assuming 'kafkaMsg.message' contains the event object
+      await processEvent(kafkaMsg.message);
+    } catch (error) {
+      console.error(`Failed to process message in ${this.topic}: ${JSON.stringify(kafkaMsg)}`, error);
+      throw error; // This will route the message to the deadletter topic
+    }
+  },
+};
+
+// Initialize and start the consumer (configure according to your Kafka setup)
+// ...
+```
+
 ## Contributing
 We welcome contributions! Here's how you can contribute:
 1. **Fork the Repository**: Create your own fork of the project.
