@@ -2,7 +2,7 @@ import { KafkaMessageBus } from "../../src/kafkaMessageBus";
 import { ConsumerDefinition, KafkaProducerMessage, KafkaConfig } from '../../src/interfaces'
 import { Providers } from "../../src/types";
 import { v4 as uuidv4 } from 'uuid';
-import middleware from '../middleware';
+import middleware from '../middlewares/middleware';
 
 describe('KafkaMessageBus with InMemoryProvider', () => {
     let kafkaMessageBus: KafkaMessageBus;
