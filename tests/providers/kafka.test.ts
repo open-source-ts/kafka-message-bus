@@ -15,6 +15,7 @@ describe('KafkaMessageBus with KafkaProvider', () => {
         config = {
             provider: Providers.Kafka,
             clientId,
+            createTopics: true,
             brokers: ["broker1"],
             username: "username",
             password: "password",
