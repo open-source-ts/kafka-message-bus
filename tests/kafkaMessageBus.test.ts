@@ -1,7 +1,8 @@
 import { KafkaMessageBus } from "../src/kafkaMessageBus";
 import InMemoryProvider from '../src/providers/inMemory';
-import { KafkaConfig } from '../src/interfaces';
+import { KafkaConfig, KafkaProducerMessage } from '../src/interfaces';
 import { Provider, Providers} from "../src/types";
+import invalidMiddleware from './middlewares/invalidMiddleware';
 
 describe('KafkaMessageBus', () => {
     let config1: KafkaConfig;
@@ -44,9 +45,31 @@ describe('KafkaMessageBus', () => {
         expect(() => new KafkaMessageBus({ config: config1 })).toThrow('provider: unsupported is not supported');
     });
 
+    it('should throw an error when listening to unsupported event', () => {
+        const bus = new KafkaMessageBus({ config: config2 });
+        expect(() => bus.on('unsupported' as any, jest.fn())).toThrow('Invalid event type unsupported');
+    });
+
+    it('should throw an error when listening with non functional callback', () => {
+        const bus = new KafkaMessageBus({ config: config2 });
+        expect(() => bus.on('log', {})).toThrow('callback argument must be of type function');
+    });
+
     it('should create an instance of KafkaMessageBus with inMemory provider', () => {
         const bus = new KafkaMessageBus({ config: config2 });
         expect(bus).toBeInstanceOf(KafkaMessageBus);
+    });
+
+    it('should failed to send message due to invalid middleware', async () => {
+        const bus = new KafkaMessageBus({ config: config2, middlewares: [invalidMiddleware] });
+        const topic = 'undefinedTopic';
+        const message: KafkaProducerMessage = {
+            key: "testKey",
+            messageType: "testType",
+            value: { content: "testContent" }
+        };
+
+        await expect(bus.send({ topic, message })).rejects.toThrow('next() called multiple times');
     });
 
     it('should use InMemoryProvider for specific tests', () => {
