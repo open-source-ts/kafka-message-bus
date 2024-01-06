@@ -1,7 +1,22 @@
-# Kafka Message Bus 🚌✨
+<div align="center">
+  <h1>Kafka Message Bus 🚌✨</h1>
+</div>
 
-[![Test Coveralls](https://github.com/tomer555/kafka-message-bus/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/tomer555/kafka-message-bus/actions/workflows/test.yml)
-[![Coverage Status](https://coveralls.io/repos/github/open-source-ts/kafka-message-bus/badge.svg?branch=master)](https://coveralls.io/github/open-source-ts/kafka-message-bus?branch=master)
+<div align="center">
+  <a href="https://npmcharts.com/compare/kafka-message-bus?interval=30">
+      <img alt="weekly downloads" src="https://img.shields.io/npm/dm/kafka-message-bus.svg">
+  </a>
+  <a href="https://github.com/tomer555/kafka-message-bus/actions/workflows/test.yml">
+    <img alt="Test Coveralls" src="https://github.com/tomer555/kafka-message-bus/actions/workflows/test.yml/badge.svg?branch=master"/>
+  </a>
+
+  <a href="https://coveralls.io/github/open-source-ts/kafka-message-bus?branch=master">
+    <img alt="Coverage Status" src="https://coveralls.io/repos/github/open-source-ts/kafka-message-bus/badge.svg?branch=master"/>
+  </a>
+  <a href="https://github.com/open-source-ts/kafka-message-bus/blob/master/LICENSE">
+    <img alt="MIT License" src="https://img.shields.io/github/license/open-source-ts/kafka-message-bus" />
+  </a>
+</div>
 
 ## Introduction
 
